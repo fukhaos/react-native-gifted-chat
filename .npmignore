@@ -4,9 +4,17 @@ example-slack-message/
 TODO.md
 screenshots/
 .babelrc
+babel.config.js
 tests/
 README.md
 ISSUE_TEMPLATE.md
 circle.yml
 codecov.yml
 media/
+App.js
+app.json
+metro.config.js
+src/
+.expo
+tsconfig.json
+tslint.json
