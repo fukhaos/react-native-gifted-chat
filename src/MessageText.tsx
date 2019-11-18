@@ -9,6 +9,7 @@ import {
   StyleProp,
   ViewStyle,
   TextStyle,
+  Clipboard
 } from 'react-native'
 
 // @ts-ignore
@@ -126,7 +127,7 @@ export default class MessageText<TMessage extends IMessage = IMessage> extends R
   }
 
   onPhonePress = (phone: string) => {
-    const options = ['Call', 'Text', 'Cancel']
+    const options = ['Ligar', 'SMS', 'Copiar', 'Cancelar']
     const cancelButtonIndex = options.length - 1
     this.context.actionSheet().showActionSheetWithOptions(
       {
@@ -140,6 +141,9 @@ export default class MessageText<TMessage extends IMessage = IMessage> extends R
             break
           case 1:
             Communications.text(phone)
+            break
+          case 2:
+            Clipboard.setString(phone);
             break
           default:
             break
